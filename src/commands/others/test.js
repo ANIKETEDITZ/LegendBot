@@ -1,1 +1,1 @@
-const { SlashCommandBuilder } = require('@discord.js/builders')
+const { SlashCommandBuilder } = require('@discord.js/builders');

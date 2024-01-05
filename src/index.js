@@ -14,14 +14,16 @@ const commandFolders = fs.readdirSync("./src/commands");
 for (file of functions) {
 require(`./functions/${file}`)(client);
 }
-
+// Premium System (Starts)
+    
 client.guildSettings = new Collection();
 
 ['premiumSys'].forEach((system) => {
     require(`../Systems/${system}`)(client);
 });
-
-
+    
+// Premium System (Ends)
+    
 client.handleEvents(eventFiles, "./src/events");
 client.handleCommands(commandFolders, "./src/commands");
 client.login(process.env.token)

@@ -22,7 +22,16 @@ ephemeral: true
 }
 
 },
-
+if (command) {
+    let guild = client.guildSettings.get(interaction.guild.id);
+    if (command.data.premium && !guild.isPremium) {
+        return interaction.reply(
+            `This Server doesn't have Premium Subscription. Contact Developer for queries.`,
+        );
+    } else {
+        return await command.execute(interaction, client);
+    }
+}
 
 
 };

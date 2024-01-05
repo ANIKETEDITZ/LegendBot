@@ -26,9 +26,3 @@ console.error(error);
 }
 },
 };
-// Premium System 
-client.guildSettings = new Collection();
-
-['premiumSys'].forEach((system) => {
-    require(`../Systems/${system}`)(client);
-});
